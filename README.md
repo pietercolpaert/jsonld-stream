@@ -11,3 +11,9 @@ The `@context` is emitted in a separate `@context` event. The `@context` may be 
 ## Use in document stores (such as MongoDB)
 
 In a document store, the `@context`s of the collections can be kept in a separate collection. The documents can be stored directly in a collection. When an `@id` is set for a document, the `@id` _should_ be used as the internal identifier for that document (e.g., `_id` in MongoDB).
+
+## Serialize to files
+
+A JSON-LD stream is serialized in 2 documents:
+ 1. A final `@context` in a file with `@context` as the only object
+ 2. A file with 1 JSON-LD document per line
