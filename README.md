@@ -6,7 +6,7 @@ This is a draft specification for building semantically interoperable javascript
 
 A nodejs JSON-LD stream is a stream that emits javascript objects conformant to the [JSON-LD specification](http://www.w3.org/TR/json-ld/), except that these objects __do not__ include a `@context` object.
 
-The `@context` is emitted in a separate `@context` event. The `@context` may be updated during the course of the stream with _additions only_. When something is added to the `@context`, the full `@context` object is emitted again.
+The `@context` is emitted in a separate `@context` event. The `@context` may be updated during the course of the stream with _additions or modifications only (no deletions)_. When something is added or modified in the `@context`, the full `@context` object is emitted again.
 
 ## Use in document stores (such as MongoDB)
 
