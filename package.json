@@ -22,10 +22,10 @@
   "dependencies": {
     "JSONStream": "^1.0.4",
     "jsonld": "^0.3.25",
-    "mocha": "^2.3.0",
     "n3": "^0.4.3"
   },
   "devDependencies": {
+    "mocha": "^2.3.0",
     "should": "^6.0.3"
   }
 }
