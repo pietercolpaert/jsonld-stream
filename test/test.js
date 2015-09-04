@@ -72,24 +72,24 @@ describe('JSONLD stream to triples test', function () {
   });
 })
 
-
-
 describe('Triples stream to JSONLD-stream test', function () {
   var readstream = fs.createReadStream('./test/data/connections.jsonldstream', {encoding : 'utf8'});
   var jsonldStream = readstream.pipe(new Deserializer());
-  var countObjects = 0, lastObject, context;
+  var countObjects = 0, lastObject, context = {};
   
   it("should output the right objects", function (done) {
     jsonldStream.pipe(new JSONLDStreamToTriples()).pipe(new TriplesToJSONLDStream()).on("data", function (object) {
       if (object["@context"]) {
-        context = object["@context"]
+        context = object;
       } else {
         countObjects++;
         lastObject = object;
       }
     }).on("end", function () {
+      context.should.have.property('@context');
       countObjects.should.be.exactly(15);
       lastObject["@type"].should.be.exactly("http://semweb.mmlab.be/ns/linkedconnections#Connection");
+      lastObject["@id"].should.be.exactly("http://example.org/15");
       done();
     });
   });
