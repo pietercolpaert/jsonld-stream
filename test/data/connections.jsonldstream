@@ -1,0 +1,17 @@
+{"@context":{"lc" : "http://semweb.mmlab.be/ns/linkedconnections#"}}
+{"@type" : "lc:Connection","@id" : "http://example.org/1"}
+{"@type" : "lc:Connection","@id" : "http://example.org/2"}
+{"@type" : "lc:Connection","@id" : "http://example.org/3"}
+{"@type" : "lc:Connection","@id" : "http://example.org/4"}
+{"@type" : "lc:Connection","@id" : "http://example.org/5"}
+{"@type" : "lc:Connection","@id" : "http://example.org/6"}
+{"@type" : "lc:Connection","@id" : "http://example.org/7"}
+{"@type" : "lc:Connection","@id" : "http://example.org/8"}
+{"@type" : "lc:Connection","@id" : "http://example.org/9"}
+{"@type" : "lc:Connection","@id" : "http://example.org/10"}
+{"@type" : "lc:Connection","@id" : "http://example.org/11"}
+{"@type" : "lc:Connection","@id" : "http://example.org/12"}
+{"@type" : "lc:Connection","@id" : "http://example.org/13"}
+{"@context":{"lc" : "http://semweb.mmlab.be/ns/linkedconnections#","rdfs":"http://www.w3.org/2000/01/rdf-schema#","xsd" : "http://www.w3.org/2001/XMLSchema#"}}
+{"@type" : "lc:Connection","@id" : "http://example.org/14", "rdfs:label" : [ {"@value":"connection 14" , "@type": "xsd:string" }, {"@value":"connectie 14" , "@language": "nl" },{"@value":"connection 14" }]}
+{"@type" : "lc:Connection","@id" : "http://example.org/15"}

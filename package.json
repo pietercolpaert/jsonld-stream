@@ -1,0 +1,30 @@
+{
+  "name": "jsonld-stream",
+  "version": "1.0.0",
+  "description": "utilities to work with jsonld-streams",
+  "main": "lib/jsonld-stream.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pietercolpaert/jsonld-stream.git"
+  },
+  "keywords": [
+    "jsonld"
+  ],
+  "author": "Pieter Colpaert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pietercolpaert/jsonld-stream/issues"
+  },
+  "homepage": "https://github.com/pietercolpaert/jsonld-stream#readme",
+  "dependencies": {
+    "JSONStream": "^1.0.4",
+    "jsonld": "^0.3.25",
+    "n3": "^0.4.3"
+  },
+  "devDependencies": {
+    "should": "^6.0.3"
+  }
+}
