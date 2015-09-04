@@ -20,6 +20,8 @@ When serialized to a file, each stream element _must_ be stringified on one line
 
 ## Javascript library
 
+[![Build Status](https://travis-ci.org/pietercolpaert/jsonld-stream.svg?branch=js-lib)](https://travis-ci.org/pietercolpaert/jsonld-stream)
+
 This repository also contains a javascript library to work with jsonld-streams.
 
 ```bash
@@ -29,10 +31,10 @@ npm install jsonld-stream --save
 It defines a couple of transformer classes which can be used as follows:
 
 ```javascript
-var jsonld-stream = require('jsonld-stream');
+var jsonldstream = require('jsonld-stream');
 fs.createReadStream('./test/data/connections.jsonldstream', {encoding : 'utf8'})
-  .pipe(new jsonld-stream.Deserializer())
-  .pipe(new jsonld-stream.JSONLDStreamToTriples())
-  .pipe(new jsonld-stream.TriplesToJSONLD())
-  .pipe(new jsonld-stream.Serializer());
+  .pipe(new jsonldstream.Deserializer())
+  .pipe(new jsonldstream.JSONLDStreamToTriples())
+  .pipe(new jsonldstream.TriplesToJSONLD())
+  .pipe(new jsonldstream.Serializer());
 ```
