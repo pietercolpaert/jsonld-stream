@@ -1,7 +1,7 @@
 var fs = require('fs'),
     should = require('should'),
     JSONLDStreamToTriples = require('../lib/jsonld-stream.js').JSONLDStreamToTriples,
-    TriplesToJSONLD = require('../lib/jsonld-stream.js').TriplesToJSONLD,
+    TriplesToJSONLDStream = require('../lib/jsonld-stream.js').TriplesToJSONLDStream,
     Serializer = require('../lib/jsonld-stream.js').Serializer,
     Deserializer = require('../lib/jsonld-stream.js').Deserializer;
 
@@ -80,7 +80,7 @@ describe('Triples stream to JSONLD-stream test', function () {
   var countObjects = 0, lastObject, context;
   
   it("should output the right objects", function (done) {
-    jsonldStream.pipe(new JSONLDStreamToTriples()).pipe(new TriplesToJSONLD()).on("data", function (object) {
+    jsonldStream.pipe(new JSONLDStreamToTriples()).pipe(new TriplesToJSONLDStream()).on("data", function (object) {
       if (object["@context"]) {
         context = object["@context"]
       } else {
