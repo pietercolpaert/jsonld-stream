@@ -4,16 +4,16 @@ This is a draft specification for building semantically interoperable javascript
 
 ## Spec
 
-A nodejs JSON-LD stream is a stream that emits javascript objects conformant to the [JSON-LD specification](http://www.w3.org/TR/json-ld/), except that these objects __do not__ include a `@context` object.
+A JSON-LD stream is a stream that emits javascript objects conformant to the [JSON-LD specification](http://www.w3.org/TR/json-ld/), except that these objects __do not__ include a `@context` object.
 
-The `@context` is emitted in a separate `@context` event. The `@context` may be updated during the course of the stream. The programmer _must_ make sure that the `@context` still works for all previously emitted objects. When something is modified in the `@context`, the full `@context` object is emitted again.
+In the stream, objects that only contain an `@context` property _may_ be given to denote the context for all objects in the stream.  The programmer _must_ make sure that a `@context` written in after objects have already been emitted, still work for all previously emitted objects.
 
-## Use in document stores (such as MongoDB)
+### Use in document stores (such as MongoDB) ###
 
-In a document store, the `@context`s of the collections can be kept in a separate collection. The documents can be stored directly in a collection. When an `@id` is set for a document, the `@id` _should_ be used as the internal identifier for that document (e.g., `_id` in MongoDB).
+Each collection _should_ contain one `@context` document which can be used to convert all objects in the collection to RDF.
 
-## Serialize to files
+The root `@id` of the object _should_ be used as the internal identifier of the document (E.g., in MongoDB `@id` becomes `_id`)
 
-A JSON-LD stream is serialized in 2 documents:
- 1. A final `@context` in a file with `@context` as the only object
- 2. A file with 1 JSON-LD document per line
+### Serialize to files ###
+
+When serialized to a file, each stream element _must_ be stringified on one line. Each object in a file is delimited by a newline (`\n`).
