@@ -35,6 +35,6 @@ var jsonldstream = require('jsonld-stream');
 fs.createReadStream('./test/data/connections.jsonldstream', {encoding : 'utf8'})
   .pipe(new jsonldstream.Deserializer())
   .pipe(new jsonldstream.JSONLDStreamToTriples())
-  .pipe(new jsonldstream.TriplesToJSONLD())
+  .pipe(new jsonldstream.TriplesToJSONLDStream())
   .pipe(new jsonldstream.Serializer());
 ```
