@@ -1,6 +1,6 @@
 {
   "name": "jsonld-stream",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "utilities to work with jsonld-streams",
   "main": "lib/jsonld-stream.js",
   "scripts": {
