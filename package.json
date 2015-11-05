@@ -21,7 +21,9 @@
   "homepage": "https://github.com/pietercolpaert/jsonld-stream#readme",
   "dependencies": {
     "JSONStream": "^1.0.4",
-    "jsonld": "^0.3.25",
+    "commander": "^2.8.1",
+    "jsonld": "^0.4.2",
+    "mongodb": "^2.0.44",
     "n3": "^0.4.3"
   },
   "devDependencies": {
