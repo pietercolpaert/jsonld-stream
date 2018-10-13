@@ -1,6 +1,6 @@
 {
   "name": "jsonld-stream",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "utilities to work with jsonld-streams",
   "main": "lib/jsonld-stream.js",
   "scripts": {
@@ -23,11 +23,10 @@
     "JSONStream": "^1.0.4",
     "commander": "^2.8.1",
     "jsonld": "^0.4.2",
-    "mongodb": "^2.0.44",
     "n3": "^0.4.3"
   },
   "devDependencies": {
-    "mocha": "^2.3.0",
+    "mocha": "^5.2.x",
     "should": "^6.0.3"
   }
 }
